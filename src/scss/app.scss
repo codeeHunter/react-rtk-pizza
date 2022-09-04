@@ -93,6 +93,7 @@ body {
     @media (max-width: 820px) {
       .categories {
         margin-top: 20px;
+        margin-bottom: 20px;
       }
 
       flex-direction: column;
@@ -177,6 +178,10 @@ body {
         color: darken($color: #b6b6b6, $amount: 50);
       }
     }
+
+    @media (max-width: 375px) {
+      margin-left: 30px;
+    }
   }
 
   .content__items {
@@ -219,6 +224,13 @@ body {
         font-size: 18px;
         color: #8d8d8d;
       }
+
+      @media (max-width: 779px) {
+        h3,
+        p {
+          margin-left: 20px;
+        }
+      }
     }
 
     &-count {
@@ -226,7 +238,6 @@ body {
       align-items: center;
       justify-content: space-between;
       width: 13%;
-
       &-minus {
         svg {
           path:first-of-type {
@@ -259,6 +270,18 @@ body {
       b {
         font-size: 22px;
       }
+
+      @media (max-width: 779px) {
+        b {
+          margin: 0px 5px;
+        }
+      }
+
+      @media (max-width: 547px) {
+        button:nth-child(1) {
+          margin-left: -15px;
+        }
+      }
     }
 
     &-price {
@@ -271,6 +294,10 @@ body {
         font-weight: bold;
         font-size: 22px;
         letter-spacing: 0.01em;
+      }
+
+      @media (max-width: 547px) {
+        margin-left: 25px;
       }
     }
 
@@ -304,6 +331,20 @@ body {
           background-color: darken($color: $gray-line, $amount: 80);
         }
       }
+
+      @media (max-width: 547px) {
+        margin-left: 30px;
+      }
+    }
+
+    @media (max-width: 547px) {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 5px;
+      flex-wrap: wrap;
     }
   }
 
