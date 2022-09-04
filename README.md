@@ -30,4 +30,4 @@
 - MockApi 
 
 #### Ссылка на сайт
-- https://react-rtk-pizza-kv74ki5hh-codeehunter.vercel.app/
+- https://react-rtk-pizza-gfougjb9o-codeehunter.vercel.app/
