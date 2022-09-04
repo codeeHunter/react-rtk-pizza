@@ -1,0 +1,60 @@
+.pizzaItem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+  width: 400px;
+  margin: 0 auto;
+
+  img {
+    width: 320px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  a {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 478px) {
+    width: 350px;
+
+    img {
+      width: 220px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 250px;
+
+    img {
+      width: 180px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+
+    a {
+      font-size: 14px;
+    }
+  }
+}
