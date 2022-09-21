@@ -31,6 +31,19 @@
 - React Lazy
 - MockApi
 
+<<<<<<< HEAD
 #### Ссылка на сайт
 
 - https://react-rtk-pizza-gfougjb9o-codeehunter.vercel.app/
+=======
+### Установка приложения.
+- Установите git, Node JS с оффициального сайта.
+- Откройте папку, куда собираетесь устанавливать сайт.
+- Откройте терминал и напишите git clone https://github.com/codeeHunter/react-rtk-pizza.git
+- Откройте скачанную папку и там, открыв терминал, напишите npm install.
+- После установки зависимостей, напишите в терминале npm start. 
+### Любуйтесь!
+
+#### Ссылка на сайт
+- https://react-rtk-pizza-jade.vercel.app/
+>>>>>>> 0b15359f65b5870b97d58d4d848af61b14560e62
