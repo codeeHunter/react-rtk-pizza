@@ -32,5 +32,8 @@
 - MockApi
 
 #### Ссылка на сайт
+<<<<<<< HEAD
 
+=======
+>>>>>>> 53092d6bb7473764f31a44ebf2b0a147b05b9892
 - https://react-rtk-pizza-gfougjb9o-codeehunter.vercel.app/
