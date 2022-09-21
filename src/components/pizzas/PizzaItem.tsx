@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
@@ -8,7 +8,7 @@ import Plus from "../svg/Plus";
 
 const sizeTitle = ["тонкое", "традиционное"];
 
-type PizzaItemProps = {
+export type PizzaItemProps = {
   id: string;
   sizes: number[];
   price: number;
@@ -26,13 +26,19 @@ export const PizzaItem: FC<PizzaItemProps> = ({
   types,
 }) => {
   const [selectedSize, setSelectedSize] = useState(0);
-  const cartitem = useTypedSelector((state) =>
-    state.cart.items.find((obj) => obj.id === id)
-  );
-
-  const addedCount = cartitem ? cartitem.count : 0;
   const [selectedType, setSelectedType] = useState(0);
+  const [countPizzas, setCountPizzas] = useState(0);
   const dispatch = useDispatch();
+
+  const cartitem = useTypedSelector((state) => state.cart.items);
+
+  useEffect(() => {
+    cartitem.forEach((item) => {
+      if (item.id === id) {
+        setCountPizzas((value) => value + item.count);
+      }
+    });
+  }, []);
 
   const onClickAdd = () => {
     const item: CartItem = {
@@ -45,6 +51,8 @@ export const PizzaItem: FC<PizzaItemProps> = ({
       count: 0,
     };
     dispatch(addItem(item));
+
+    setCountPizzas((value) => value + 1);
   };
 
   return (
@@ -88,7 +96,7 @@ export const PizzaItem: FC<PizzaItemProps> = ({
           >
             <Plus />
             <span>Добавить</span>
-            {addedCount > 0 && <i>{addedCount}</i>}
+            {<i>{countPizzas}</i>}
           </button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { Search } from "../search/Search";
 import logoSvg from "../../assets/img/pizza-logo.svg";
 import Logo from "../svg/Logo";
+import { CartItem } from "../../store/cart/types";
 
 export const Header = () => {
   const { items, totalPrice } = useTypedSelector((state) => state.cart);
@@ -12,7 +13,7 @@ export const Header = () => {
   const path = !pathname.includes("pizza");
 
   const totalCount = items.reduce(
-    (sum: number, item: any) => sum + item.count,
+    (sum: number, item: CartItem) => sum + item.count,
     0
   );
 

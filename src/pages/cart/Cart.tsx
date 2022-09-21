@@ -42,7 +42,7 @@ const Cart: FC = () => {
           </div>
         </div>
         <div className="content__items">
-          {items.map((item: any, index) => (
+          {items.map((item: CartItem, index) => (
             <CartItemBlock key={index} {...item} />
           ))}
         </div>

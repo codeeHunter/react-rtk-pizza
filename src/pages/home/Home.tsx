@@ -1,11 +1,17 @@
 import React, { FC, useCallback, useEffect, useState } from "react";
-import { SortCategories, Pagination, PizzaItem } from "../../components";
+import {
+  SortCategories,
+  Pagination,
+  PizzaItem,
+  PizzaItemProps,
+} from "../../components";
 import { useRef } from "react";
 import { useAppDispatch } from "../../store/store";
 import { setCategoryId, setCurrentPage } from "../../store/filter/slice";
 import { fetchPizzas } from "../../store/pizzas/asyncAction";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { Loader } from "../../components/loader/Loader";
+import { Pizza } from "../../store/pizzas/types";
 
 export const Home: FC = () => {
   const { categoryId, sort, currentPage, searchValue } = useTypedSelector(
@@ -54,8 +60,8 @@ export const Home: FC = () => {
     isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const pizzas = items.map((obj: any, index) => (
-    <PizzaItem key={index} {...obj} />
+  const pizzas = items.map((obj: Pizza, index) => (
+    <PizzaItem sizes={[]} key={index} {...obj} />
   ));
 
   return (

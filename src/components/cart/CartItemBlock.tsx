@@ -31,17 +31,25 @@ export const CartItemBlock: FC<CartItemProps> = ({
     dispatch(
       addItem({
         id,
+        type,
+        size,
       } as CartItem)
     );
   };
 
   const onClickMinus = () => {
-    dispatch(minusItem(id));
+    dispatch(
+      minusItem({
+        id,
+        type,
+        size,
+      } as CartItem)
+    );
   };
 
   const onClickRemove = () => {
     if (window.confirm("Ты действительно хочешь удалить товар?")) {
-      dispatch(removeItem(id));
+      dispatch(removeItem({ id, type, size } as CartItem));
     }
   };
 
