@@ -2,8 +2,8 @@ import React, { FC, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { Loader } from "../../components/loader/Loader";
 import styles from "./FullPizza.module.scss";
+import { Loader } from "../../components/loader/Loader";
 
 const FullPizza: FC = () => {
   const [pizza, setPizza] = useState<{

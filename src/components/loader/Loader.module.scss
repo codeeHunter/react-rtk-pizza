@@ -1,15 +1,16 @@
 .loaderWrapper {
   display: flex;
   justify-content: center;
-  width: 100%;
-
+  align-items: center;
+  margin: 100px 0px;
   .loader {
     top: 50%;
     border: 16px solid #e3e3e3;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid #ffdf8c;
     border-radius: 50%;
     width: 140px;
     height: 140px;
+
     animation: spin 1s linear infinite;
 
     @keyframes spin {

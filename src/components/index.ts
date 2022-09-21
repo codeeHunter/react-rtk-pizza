@@ -1,4 +1,3 @@
-export * from "./pizzas/Skeleton";
 export * from "./pizzas/PizzaItem";
 export * from "./header/Header";
 export * from "./categories/Categories";

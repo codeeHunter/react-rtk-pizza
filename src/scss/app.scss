@@ -448,5 +448,37 @@ body {
       font-weight: 600;
       font-size: 18px;
     }
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 730px) {
+      width: 400px !important;
+
+      img {
+        width: 200px !important;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 433px) {
+      width: 300px !important;
+
+      h2 {
+        font-size: 32px !important;
+      }
+
+      p {
+        line-height: 20px;
+        font-size: 20px;
+      }
+
+      img {
+        width: 200px !important;
+        height: 150px;
+      }
+    }
   }
 }

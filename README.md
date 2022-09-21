@@ -1,5 +1,7 @@
 # Интернет-магазин пицца
+
 ## Функционал приложения
+
 - Оптимизированный поиск пиццы при помощи debounce.
 - Добавление пиццы в корзину.
 - Удаление, уменьшение, количество пицц в корзине.
@@ -27,7 +29,8 @@
 - Code Splitting
 - React Loadable
 - React Lazy
-- MockApi 
+- MockApi
 
 #### Ссылка на сайт
-- https://react-rtk-pizza-kv74ki5hh-codeehunter.vercel.app/
+
+- https://react-rtk-pizza-gfougjb9o-codeehunter.vercel.app/

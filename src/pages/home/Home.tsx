@@ -1,15 +1,11 @@
 import React, { FC, useCallback, useEffect, useState } from "react";
-import {
-  SortCategories,
-  Pagination,
-  PizzaItem,
-  Skeleton,
-} from "../../components";
+import { SortCategories, Pagination, PizzaItem } from "../../components";
 import { useRef } from "react";
 import { useAppDispatch } from "../../store/store";
 import { setCategoryId, setCurrentPage } from "../../store/filter/slice";
 import { fetchPizzas } from "../../store/pizzas/asyncAction";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { Loader } from "../../components/loader/Loader";
 
 export const Home: FC = () => {
   const { categoryId, sort, currentPage, searchValue } = useTypedSelector(
@@ -29,9 +25,9 @@ export const Home: FC = () => {
     dispatch(setCurrentPage(number));
   };
 
-  const [_, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const getPizzas = async () => {
+  const getPizzas = () => {
     const order = sort.sortProperty.includes("-") ? "asc" : "desc";
     const sortBy = sort.sortProperty.replace("-", "");
     const category = categoryId > 0 ? `category=${categoryId}` : "";
@@ -58,9 +54,8 @@ export const Home: FC = () => {
     isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const pizzas = items.map((obj: any) => <PizzaItem key={obj.id} {...obj} />);
-  const skeletons = [...new Array(6)].map((_, index) => (
-    <Skeleton key={index} />
+  const pizzas = items.map((obj: any, index) => (
+    <PizzaItem key={index} {...obj} />
   ));
 
   return (
@@ -81,7 +76,7 @@ export const Home: FC = () => {
         </div>
       ) : (
         <div className="content__items">
-          {status === "loading" ? skeletons : pizzas}
+          {status === "loading" ? <Loader /> : pizzas}
         </div>
       )}
       <Pagination currentPage={currentPage} onChangePage={onChangePage} />
