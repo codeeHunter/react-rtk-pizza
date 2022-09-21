@@ -40,4 +40,4 @@
 ### Любуйтесь!
 
 #### Ссылка на сайт
-- https://react-rtk-pizza-gfougjb9o-codeehunter.vercel.app/
+- https://react-rtk-pizza-jade.vercel.app/
